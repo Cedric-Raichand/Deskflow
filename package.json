@@ -3,12 +3,26 @@
   "version": "0.1.0",
   "description": "Safe, previewable, reversible file organising for your computer.",
   "type": "module",
-  "main": "src/index.js",
-  "bin": { "deskflow": "src/cli.js" },
-  "scripts": {
-    "test": "node --test",
-    "cli": "node src/cli.js"
+  "main": "electron/main.js",
+  "bin": {
+    "deskflow": "src/cli.js"
   },
-  "engines": { "node": ">=20" },
-  "license": "MIT"
+  "scripts": {
+  "test": "node --test",
+  "cli": "node src/cli.js",
+  "renderer:dev": "vite",
+  "app:dev": "electron . --dev",
+  "start": "vite build && electron ."
+},
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^45.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.5"
+  }
 }
