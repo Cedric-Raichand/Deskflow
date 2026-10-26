@@ -1,4 +1,4 @@
-import { app, BrowserWindow, dialog, ipcMain, shell } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, Menu, shell } from 'electron';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
@@ -100,12 +100,14 @@ handle('history:undo', async (event, opId) => {
 });
 
 function createWindow() {
+  if (!isDev) Menu.setApplicationMenu(null); // packaged app: no File/Edit/View bar (dev keeps it for DevTools)
   win = new BrowserWindow({
     width: 1000,
     height: 740,
     minWidth: 720,
     minHeight: 520,
     title: 'DeskFlow',
+    icon: path.join(here, '..', 'build', 'icon.png'),
     webPreferences: {
       preload: path.join(here, 'preload.cjs'),
       contextIsolation: true,
