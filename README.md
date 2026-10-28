@@ -4,9 +4,6 @@ A safe file-organising assistant for Windows. Pick a folder, see exactly what De
 
 Messy Downloads folder? DeskFlow sorts the loose files into `Documents`, `Images`, `Videos`, `Audio`, `Archives`, `Installers`, `Code` and `Other` folders inside it. It only moves files after you approve a preview, never overwrites anything, and never deletes.
 
-![Preview screen](docs/preview.png)
-![Result and history](docs/result.png)
-
 ## Features
 
 - **Preview first:** see every file and its destination before anything moves.
